@@ -1,0 +1,2 @@
+# Start
+```uvicorn api:app```
