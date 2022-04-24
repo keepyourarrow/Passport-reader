@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: rawline, "Open Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgb(22, 22, 22);
+  background-color: #f3f0ec;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
