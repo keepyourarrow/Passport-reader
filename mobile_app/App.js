@@ -55,7 +55,7 @@ const App = () => {
 
 		try {
 			console.log('here');
-			const response = await fetch('https://bfe7-188-243-86-226.eu.ngrok.io/predict', {
+			const response = await fetch('http://51.250.75.180:8000/predict', {
 				method: 'POST',
             	body: formData,
 			});
