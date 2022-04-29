@@ -11,7 +11,7 @@ const ExistingUpload = ({isLoading, show, setShow}) => {
 
     return (
         <div className="existing-uploader">
-            <h3 className="main__second-title">Или выберите один из пасспортов</h3>
+            <h3 className="main__second-title">Или выберите один из паспортов</h3>
 			<div className="existing-uploader-btn-container">
             	<button className="existing-uploader-btn" onClick={handleShow}>{show ? "Скрыть" : "Показать" }</button>
 			</div>
