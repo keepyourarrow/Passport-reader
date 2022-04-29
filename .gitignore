@@ -1,3 +1,6 @@
 api/saved_files/**
 __pycache__/
 .ipynb_checkpoints/
+# Local Netlify folder
+.netlify
+passport_model-building/images
