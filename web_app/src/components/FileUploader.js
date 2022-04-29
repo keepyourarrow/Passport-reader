@@ -9,7 +9,10 @@ const FileUploader = ({isLoading, setError, setImg, handleSubmitData}) => {
             return;
         }
         handleSubmitData(file)
-        setImg(URL.createObjectURL(file))
+        const objectUrl = URL.createObjectURL(file)
+        // return;
+
+        setImg(objectUrl)
     }, []);
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop,  disabled: isLoading, accept: 'image/jpeg,image/png' });

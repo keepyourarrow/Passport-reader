@@ -26,8 +26,13 @@ const App = () => {
     const onPictureProcessed = data => {
         console.log('[INFO] onPictureProcessed ', data);
         if (data) {
-            setImage(data.image);
-            setStep(2);
+            if ( Platform.OS == 'ios' ) {
+                setStep(3);
+                setCroppedImage(data.image)
+            } else {
+                setImage(data.image);
+                setStep(2);
+            }
         }
     };
     const onCroppedDone = data => {
@@ -95,8 +100,13 @@ const App = () => {
                     loading={loading}
                     setLoading={setLoading}
                     onCancel={() => {
-                        setStep(2);
-                        setCroppedImage(null);
+                        if ( Platform.OS == 'ios' ) {
+                            setStep(1);
+                            setImage(null);
+                        } else {
+                            setStep(2);
+                            setCroppedImage(null);
+                        }
                     }}
                     onDone={onDone}
                     serverError={serverError}

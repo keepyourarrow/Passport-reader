@@ -44,7 +44,7 @@ const Home = () => {
             }
 
             try {
-                const response = await fetch(`https://bfe7-188-243-86-226.eu.ngrok.io/${endPoint}`, obj);
+                const response = await fetch(`http://51.250.75.180:8000/${endPoint}`, obj);
                 if ( response?.status > 400 ) {
                     throw new Error();
                 }
@@ -66,7 +66,7 @@ const Home = () => {
         <main>
             <section className="main__input-container">
                 <article className="main__input-blocks">
-                    <h1 className="main__title">Passport field Extractor</h1>
+                    <h1 className="main__title">Passport reader</h1>
                     <h2 className="main__second-title">
                         Загрузите разворот главной странице пасспорта для чтения пасспорта
                     </h2>
@@ -78,14 +78,14 @@ const Home = () => {
                         handleSubmitData={handleSubmitData}
                     />
                     <UrlUploader isLoading={isLoading} handleSubmitData={handleSubmitData} />
-                    {/* <ExistingUpload isLoading={isLoading} show={show} setShow={setShow} /> */}
+                    <ExistingUpload isLoading={isLoading} show={show} setShow={setShow} />
 
                     {error && <p className="error">{error}</p>}
 
                     {isLoading && (
                         <div className="loader">
-
                             <ReactLoading
+                                className="mobile-loader"
                                 type="spokes"
                                 color="#fff"
                                 height={"170px"}
@@ -95,12 +95,20 @@ const Home = () => {
                     )}
                 </article>
             </section>
-            {/* {!isLoading && (
+            {!isLoading && (
                 <Gallery
                     show={show}
-                    handleSubmitData={handleSubmitData}
+                    setImg={setImg}
+                    setIsLoading={setIsLoading}
+                    setResults={setResults}
+                    setShow={setShow}
                 />
-            )} */}
+            )}
+            {/* so upper part of screen wouldnt tilt when gallery is shown */}
+            {!results && !isLoading && !show &&
+                <div className="tilt-helper"></div>
+            }
+
 
             {(img && results) &&
                 <DisplayResults img={img} results={results}/>

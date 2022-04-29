@@ -157,7 +157,7 @@ const RenderCameraView = ({
 const styles = StyleSheet.create({
 	whiteBgContainer: {
 		// minHeight: hp("3%"),
-        height: verticalScale(100),
+        height: scale(100),
 		backgroundColor: '#fff',
 		width: '100%',
 		paddingVertical: scale(5),

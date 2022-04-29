@@ -285,7 +285,6 @@ main {
     gap: 20px;
     margin-bottom: 50px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgb(31, 66, 180)
     border-bottom: 1px solid rgba(0,0,0,0.2)
 }
 
@@ -303,6 +302,10 @@ main {
 
 .results__item-result.not-found {
     color: red;
+}
+
+.tilt-helper {
+    height: 500px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -349,19 +352,43 @@ main {
     .form-input {
         width: 300px;
     }
+    .main__input-container {
+        padding: 0;
+    }
+    .uploader-drag-text {
+        display:none;
+    }
 }
 
 @media screen and (max-width: 576px) {
+    main {
+        padding: 0 10px;
+    }
     .uploader-btn {
         font-size: 18px;
         padding: 5px;
         text-align: center;
+        max-width: 100%;
     }
     .form-input {
         width: 200px;
     }
     .url-uploader__container {
         margin-right: 10px;
-        /* flex-direction: column; */
+        flex-direction: column;
+    }
+    .existing-uploader-btn {
+        margin:0 auto;
+    }
+    .drag-active, .loader {
+        padding: 0;
+        height:750px;
+    }
+    .mobile-loader {
+        position: absolute;
+        top: 20%;
+    }
+    .tilt-helper {
+        height: 50px;
     }
 }

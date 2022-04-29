@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
-const Gallery = ({ show, handleSubmitData }) => {
+import EXISTING_RESULTS from '../constants/existingResults.json';
+
+const Gallery = ({ show, setImg, setIsLoading, setResults, setShow }) => {
     const [images, setImages] = useState([]);
     const [isSelected, setIsSelected] = useState(false);
 
@@ -14,7 +16,6 @@ const Gallery = ({ show, handleSubmitData }) => {
 
     function importAll(r) {
         const images = r.keys().map(r);
-        console.log("called", images);
 
         return images.map((item, index) => {
             return {
@@ -43,7 +44,15 @@ const Gallery = ({ show, handleSubmitData }) => {
 
 
             if ( newIsSelected ) {
-                handleSubmitData(image)
+                window.scrollTo(0,0);
+                setIsLoading(true);
+                setResults(null);
+                setTimeout(() => {
+                    setIsLoading(false);
+                    setImg(image.src)
+                    setResults(EXISTING_RESULTS[image.id])
+                    setShow(false);
+                },2000)
             }
         }
     };
