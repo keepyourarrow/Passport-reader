@@ -44,7 +44,7 @@ const Home = () => {
             }
 
             try {
-                const response = await fetch(`http://51.250.75.180:8000/${endPoint}`, obj);
+                const response = await fetch(`https://11c3-188-243-86-226.eu.ngrok.io/${endPoint}`, obj);
                 if ( response?.status > 400 ) {
                     throw new Error();
                 }
