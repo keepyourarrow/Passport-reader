@@ -67,7 +67,6 @@ class CropImage extends Component {
 
 
 	render() {
-        console.log(viewWidth, viewHeight);
 		return (
 			<View style={styles.mainContainer}>
 				<View style={styles.imageContainer}>

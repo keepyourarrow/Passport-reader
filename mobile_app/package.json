@@ -13,9 +13,10 @@
     "react": "17.0.2",
     "react-native": "0.68.1",
     "react-native-awesome-alerts": "^1.5.2",
-    "react-native-document-scanner": "github:keepyourarrow/react-native-document-scanner",
     "react-native-image-picker": "^4.7.3",
     "react-native-perspective-image-cropper": "github:keepyourarrow/react-native-perspective-image-cropper",
+    "react-native-progress": "^5.0.0",
+    "react-native-rectangle-scanner": "^1.0.10",
     "react-native-responsive-dimensions": "^3.1.1",
     "react-native-svg": "^12.3.0",
     "react-native-vector-icons": "^9.1.0"

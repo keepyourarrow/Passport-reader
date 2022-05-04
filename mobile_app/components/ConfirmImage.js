@@ -1,13 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-import {
-    StyleSheet,
-    Text,
-    View,
-    Image,
-    PermissionsAndroid,
-} from 'react-native';
-
+import {StyleSheet, Text, View, Image, PermissionsAndroid} from 'react-native';
 
 import {
     responsiveScreenHeight,
@@ -19,8 +12,16 @@ import Loader from './Loader';
 
 import {moderateScale, verticalScale} from '../helpers/scaling';
 
-
-const ConfirmImage = ({croppedImage, loading, type, serverError, setServerError, onCancel, onDone}) => {
+const ConfirmImage = ({
+    croppedImage,
+    loading,
+    type,
+    serverError,
+    setServerError,
+    setLoading,
+    onCancel,
+    onDone,
+}) => {
 
     return (
         <View style={styles.mainContainer}>
@@ -39,16 +40,24 @@ const ConfirmImage = ({croppedImage, loading, type, serverError, setServerError,
                 />
             </View>
 
-           <ButtonsContainer
+            <ButtonsContainer
                 alertMessage="Вы уверены что хотите вернутся к предыдущему шагу?"
                 cancelCallback={onCancel}
                 doneCallback={onDone}
                 loading={loading}
                 serverError={serverError}
                 setServerError={setServerError}
-           />
+            />
 
-           {loading && <Loader message="Загрузка" />}
+            {loading && (
+                <Loader
+                    message="Загрузка"
+                    progressBar={true}
+                    loading={loading}
+                    setLoading={setLoading}
+                    setServerError={setServerError}
+                />
+            )}
         </View>
     );
 };
@@ -72,7 +81,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#232323',
         fontWeight: 'bold',
-        fontSize: moderateScale(14)
+        fontSize: moderateScale(14),
     },
     whiteBgContainer: {
         position: 'absolute',
@@ -80,7 +89,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         width: '100%',
     },
-
 });
 
 export default ConfirmImage;

@@ -9,7 +9,7 @@ import {
     View,
 } from 'react-native';
 
-import DocumentScanner, {RectangleOverlay} from 'react-native-document-scanner';
+import Scanner, {RectangleOverlay} from 'react-native-rectangle-scanner';
 
 import RenderCameraView from './RenderCameraView';
 
@@ -224,7 +224,7 @@ export default class PassportCamera extends Component {
 
                 <RenderCameraView
                     camera={
-                        <DocumentScanner
+                        <Scanner
                             onPictureTaken={this.onPictureTaken}
                             onPictureProcessed={this.onPictureProcessed}
                             enableTorch={this.state.flashEnabled}
@@ -248,6 +248,7 @@ export default class PassportCamera extends Component {
                     onCancel={this.props.onCancel}
                     onCapture={this.onCapture}
                     onPictureProcessed={this.props.onPictureProcessed}
+                    rectangleOverlay={rectangleOverlay}
                 />
             </View>
         );
