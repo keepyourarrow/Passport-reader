@@ -3,4 +3,4 @@ __pycache__/
 .ipynb_checkpoints/
 # Local Netlify folder
 .netlify
-passport_model-building/images
+object_detection_model/images

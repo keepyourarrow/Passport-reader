@@ -1,0 +1,7 @@
+*.jpg
+*.pdf
+*.xml
+# checkpoints/
+protoc/
+models/
+drive/
