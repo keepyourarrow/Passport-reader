@@ -69,6 +69,7 @@ const Home = () => {
                     <h1 className="main__title">Passport reader</h1>
                     <h2 className="main__second-title">
                         Загрузите разворот главной странице пасспорта для чтения пасспорта
+                        <strong>(русский паспорт)</strong>
                     </h2>
 
                     <FileUploader
