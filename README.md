@@ -1,9 +1,14 @@
+demo:
+https://passport-reader.netlify.app/
+
 ## Мотивация
 Для чтобы не тратить время на заполнения формы где нужны паспортные данные, использовать авто распознователь который сделает это за тебя
 
 ## Stack
 API: Python, FastApi, Tensorflow Object detection model, Tesseract
+
 Web: React
+
 Mobile: React-native
 
 ## Как работает?
@@ -16,6 +21,3 @@ Mobile: React-native
 
 ## Учение
 Машинная модель училась на 15000 паспортах
-
-demo:
-https://passport-reader.netlify.app/
